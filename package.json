@@ -1,17 +1,14 @@
 {
-  "name": "play-nextjs",
+  "name": "signalizeai-website",
   "version": "2.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/prisma-adapter": "^1.5.0",
-    "@prisma/adapter-pg": "^7.0.1",
-    "@prisma/client": "^7.2.0",
     "axios": "^1.6.2",
     "bcrypt": "^5.0.1",
     "date-fns": "^3.4.0",
@@ -45,7 +42,6 @@
     "eslint": "^8",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
-    "prisma": "^7.2.0",
     "tailwindcss": "^4.1.17",
     "typescript": "^5"
   },
