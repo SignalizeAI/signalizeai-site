@@ -10,7 +10,7 @@ import Hero from "@/components/Hero";
 // import Pricing from "@/components/Pricing";
 // import Team from "@/components/Team";
 // import Testimonials from "@/components/Testimonials";
-import { getAllPosts } from "@/utils/markdown";
+// import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
+  // const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
 
   return (
     <main>
