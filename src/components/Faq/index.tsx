@@ -21,7 +21,7 @@ const Faq = () => {
             />
             <SingleFaq
               question="Do I need to sign in?"
-              answer="No. Sign in with Google only if you want to save, filter, or export your analyses. Browsing insights work without an account."
+              answer="Yes. Sign in with Google if you want to save, filter, or export your analyses. Browsing insights won't work without an account."
             />
             <SingleFaq
               question="How are API keys secured?"
@@ -36,7 +36,7 @@ const Faq = () => {
             />
             <SingleFaq
               question="Can I export or share insights?"
-              answer="Yes. When signed in, you can save results, filter them, and export to CSV or Excel for your CRM or sales workspace."
+              answer="Yes. You can save results, filter them, and export to CSV or Excel for your CRM or sales workspace."
             />
             <SingleFaq
               question="Do you track users or sell data?"

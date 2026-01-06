@@ -97,7 +97,7 @@ const Header = () => {
                 )}
               </Link>
             </div>
-            <span className="text-white text-lg font-semibold">Signalize<b>AI</b></span>
+            <span className="text-white text-lg font-semibold">SignalizeAI</span>
             <div className="flex w-full items-center justify-between px-4">
               <div>
                 <button
@@ -269,7 +269,7 @@ const Header = () => {
                 </button>
 
                 <div className="hidden items-center justify-end pr-16 sm:flex lg:pr-0">
-                  <Link
+                  {/* <Link
                     href="/signin"
                     className={`px-7 py-3 text-base font-medium hover:opacity-70 ${
                       sticky ? "text-dark dark:text-white" : "text-white"
@@ -287,7 +287,7 @@ const Header = () => {
                     }`}
                   >
                     Sign Up
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
