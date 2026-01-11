@@ -6,7 +6,7 @@ export default function Head() {
       </title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="SignalizeAI is the Chrome extension that turns any business website into clear, actionable sales intel in seconds—summary, target customer, value prop, persona, and export-ready notes." />
-      <link rel="icon" href="/images/favicon.ico" />
+      <link rel="icon" type="image/png" href="/images/logo/favicon.png" />
     </>
   );
 }

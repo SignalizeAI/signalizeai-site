@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="mb-10 w-full">
               <Link href="/" className="w-10 mb-6 inline-block max-w-[160px]">
                 <Image
-                  src="/images/logo/logo-white.svg"
+                  src="/images/logo/logo-white.png"
                   alt="logo"
                   width={140}
                   height={30}
