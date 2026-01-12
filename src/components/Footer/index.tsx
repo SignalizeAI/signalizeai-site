@@ -4,90 +4,209 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer
-      className="wow fadeInUp relative z-10 bg-primary pt-20 lg:pt-[100px]"
+      className="wow fadeInUp bg-primary relative z-10 overflow-hidden pt-12 pb-12 lg:pt-16 lg:pb-16"
       data-wow-delay=".15s"
     >
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
-            <div className="mb-10 w-full">
-              <Link href="/" className="w-10 mb-6 inline-block max-w-[160px]">
-                <Image
-                  src="/images/logo/logo-white.png"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="max-w-full"
-                />
-              </Link>
-              <p className="mb-8 max-w-[270px] text-base text-gray-7">
-                The Chrome extension that turns any business website into clear, actionable insights.
-              </p>
-              <div className="-mx-3 flex items-center">
-                
-                <Link
-                  aria-label="social link"
-                  href="https://www.linkedin.com/company/signalizeai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 text-gray-7 hover:text-white"
-                >
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="fill-current"
-                  >
-                    <path d="M18.8065 1.8335H3.16399C2.42474 1.8335 1.83334 2.42489 1.83334 3.16414V18.8362C1.83334 19.5459 2.42474 20.1668 3.16399 20.1668H18.7473C19.4866 20.1668 20.078 19.5754 20.078 18.8362V3.13457C20.1371 2.42489 19.5457 1.8335 18.8065 1.8335ZM7.24464 17.4168H4.55379V8.69371H7.24464V17.4168ZM5.88443 7.48135C4.99733 7.48135 4.31721 6.77167 4.31721 5.91414C4.31721 5.05661 5.0269 4.34694 5.88443 4.34694C6.74196 4.34694 7.45163 5.05661 7.45163 5.91414C7.45163 6.77167 6.8011 7.48135 5.88443 7.48135ZM17.4463 17.4168H14.7554V13.1883C14.7554 12.183 14.7258 10.8523 13.336 10.8523C11.9167 10.8523 11.7097 11.976 11.7097 13.0996V17.4168H9.01884V8.69371H11.6506V9.90608H11.6801C12.0645 9.1964 12.9221 8.48672 14.2527 8.48672C17.0027 8.48672 17.5054 10.2609 17.5054 12.6856V17.4168H17.4463Z" />
-                  </svg>
+      <div className="relative z-20 container">
+        {/* Footer Content */}
+        <div>
+          <div className="-mx-4 flex flex-wrap justify-between">
+            {/* --- Brand Section --- */}
+            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-4/12">
+              <div className="mb-6 w-full">
+                <Link href="/" className="mb-4 inline-block max-w-[180px]">
+                  <Image
+                    src="/images/logo/logo-white.png"
+                    alt="logo"
+                    width={140}
+                    height={30}
+                    className="max-w-full transition-opacity duration-300 hover:opacity-80"
+                  />
                 </Link>
+                <p className="mb-4 max-w-[270px] text-sm leading-relaxed font-medium text-gray-300">
+                  The Chrome extension that turns any business website into
+                  clear, actionable insights.
+                </p>
+                <div className="flex items-center gap-4">
+                  <Link
+                    aria-label="LinkedIn Link"
+                    href="https://www.linkedin.com/company/signalizeai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group hover:text-primary flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition-all duration-300 hover:border-white hover:bg-white hover:shadow-lg hover:shadow-white/20"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="fill-current"
+                    >
+                      <path d="M18.8065 1.8335H3.16399C2.42474 1.8335 1.83334 2.42489 1.83334 3.16414V18.8362C1.83334 19.5459 2.42474 20.1668 3.16399 20.1668H18.7473C19.4866 20.1668 20.078 19.5754 20.078 18.8362V3.13457C20.1371 2.42489 19.5457 1.8335 18.8065 1.8335ZM7.24464 17.4168H4.55379V8.69371H7.24464V17.4168ZM5.88443 7.48135C4.99733 7.48135 4.31721 6.77167 4.31721 5.91414C4.31721 5.05661 5.0269 4.34694 5.88443 4.34694C6.74196 4.34694 7.45163 5.05661 7.45163 5.91414C7.45163 6.77167 6.8011 7.48135 5.88443 7.48135ZM17.4463 17.4168H14.7554V13.1883C14.7554 12.183 14.7258 10.8523 13.336 10.8523C11.9167 10.8523 11.7097 11.976 11.7097 13.0996V17.4168H9.01884V8.69371H11.6506V9.90608H11.6801C12.0645 9.1964 12.9221 8.48672 14.2527 8.48672C17.0027 8.48672 17.5054 10.2609 17.5054 12.6856V17.4168H17.4463Z" />
+                    </svg>
+                  </Link>
+
+                  <Link
+                    aria-label="GitHub Link"
+                    href="https://github.com/SignalizeAI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group hover:text-primary flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition-all duration-300 hover:border-white hover:bg-white hover:shadow-lg hover:shadow-white/20"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </Link>
+
+                  <Link
+                    aria-label="Discord Link"
+                    href="https://discord.gg/ThZ6jkcf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group hover:text-primary flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition-all duration-300 hover:border-white hover:bg-white hover:shadow-lg hover:shadow-white/20"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.5328-9.7413-3.4683-13.6373a.061.061 0 00-.0325-.0277zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419z" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-            <div className="mb-10 w-full">
-              <h4 className="mb-9 text-lg font-semibold text-white">
-                About Us
-              </h4>
-              <ul>
-                <li>
-                  <Link
-                    href="#home"
-                    className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  {/* <Link
+
+            {/* --- About Us Section --- */}
+            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+              <div className="mb-10 w-full">
+                <h4 className="mb-6 text-base font-bold tracking-wide text-white">
+                  About Us
+                </h4>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="#home"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    {/* <Link
                     href="#"
                     className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     Features
                   </Link> */}
-                </li>
-                <li>
-                  <Link
-                    href="#about"
-                    className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  {/* <Link
+                  </li>
+                  <li>
+                    <Link
+                      href="#about"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    {/* <Link
                     href="#"
                     className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     Testimonial
                   </Link> */}
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+
+            {/* --- Resources Section --- */}
+            {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+              <div className="mb-6 w-full">
+                <h4 className="mb-6 text-base font-bold tracking-wide text-white">
+                  Resources
+                </h4>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/#contact"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/#faq"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blogs"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/pricing"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Pricing
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div> */}
+
+            {/* --- Legal Section --- */}
+            {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+              <div className="mb-6 w-full">
+                <h4 className="mb-6 text-base font-bold tracking-wide text-white">
+                  Legal
+                </h4>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="https://signalizeai.org/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Terms of Service
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="inline-block text-sm text-gray-300 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    >
+                      Refund Policy
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div> */}
+
+            {/* --- Commented Products Section --- */}
+            {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="mb-9 text-lg font-semibold text-white">
                 Features
@@ -128,7 +247,9 @@ const Footer = () => {
               </ul>
             </div>
           </div> */}
-          {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+
+            {/* --- Commented Products Section --- */}
+            {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="mb-9 text-lg font-semibold text-white">
                 Our Products
@@ -169,7 +290,9 @@ const Footer = () => {
               </ul>
             </div>
           </div> */}
-          {/* <div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
+
+            {/* --- Commented Useful Links Section --- */}
+            {/* <div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
             <div className="mb-10 w-full">
               <h4 className="mb-9 text-lg font-semibold text-white">
                 Useful Links
@@ -210,51 +333,51 @@ const Footer = () => {
               </ul>
             </div>
           </div> */}
-        </div>
-      </div>
+          </div>
 
-      <div className="mt-12 border-t border-[#8890A4]/40 py-8 lg:mt-[60px]">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 md:w-2/3 lg:w-1/2">
-              <div className="my-1">
+          {/* --- Bottom Copyright Section --- */}
+          <div className="mt-8 border-t border-white/10 pt-6">
+            <div className="-mx-4 flex flex-wrap items-center justify-between">
+              <div className="w-full px-4 md:w-auto">
                 <div className="-mx-3 flex items-center justify-center md:justify-start">
                   <Link
                     href="https://signalizeai.org/privacy"
-                    className="px-3 text-base text-gray-7 hover:text-white hover:underline"
+                    className="px-3 text-sm text-gray-300 transition-colors hover:text-white"
                   >
                     Privacy policy
                   </Link>
                   {/* <Link
                     href="#"
-                    className="px-3 text-base text-gray-7 hover:text-white hover:underline"
+                    className="px-3 text-sm text-gray-7 hover:text-white hover:underline"
                   >
                     Terms of service
                   </Link> */}
                 </div>
               </div>
-            </div>
-            <div className="w-full px-4 md:w-1/3 lg:w-1/2">
-              <div className="my-1 flex justify-center md:justify-end">
-                <p className="text-base text-gray-7">
-                  SignalizeAI 2026. All Rights Reserved.
-                </p>
+              <div className="mt-2 w-full px-4 md:mt-0 md:w-auto">
+                <div className="flex justify-center md:justify-end">
+                  <p className="text-xs text-gray-400">
+                    &copy; {new Date().getFullYear()} SignalizeAI. All Rights
+                    Reserved.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* --- Background Shapes (Preserved) --- */}
       <div>
-        <span className="absolute left-0 top-0 z-[-1] aspect-[95/82] w-full max-w-[570px]">
+        <span className="absolute top-0 left-0 z-[-1] aspect-[95/82] w-full max-w-[570px] opacity-40 mix-blend-overlay">
           <Image src="/images/footer/shape-1.svg" alt="shape" fill />
         </span>
 
-        <span className="absolute bottom-0 right-0 z-[-1] aspect-[31/22] w-full max-w-[372px]">
+        <span className="absolute right-0 bottom-0 z-[-1] aspect-[31/22] w-full max-w-[372px] opacity-40 mix-blend-overlay">
           <Image src="/images/footer/shape-3.svg" alt="shape" fill />
         </span>
 
-        <span className="absolute right-0 top-0 z-[-1]">
+        <span className="absolute top-0 right-0 z-[-1] opacity-60">
           <svg
             width="102"
             height="102"
