@@ -27,17 +27,4 @@ export const pricingData: Price[] = [
       "Priority support",
     ],
   },
-  {
-    id: "price_1NQk4eLtGdPVhGLeZsZDsCNz",
-    unit_amount: 300 * 100,
-    nickname: "Business",
-    offers: [
-      "10 users",
-      "Shared workspace & exports",
-      "Custom persona and scoring tuning",
-      "Security reviews and SSO on request",
-      "Dedicated success manager",
-      "SLAs and onboarding",
-    ],
-  },
 ];

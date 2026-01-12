@@ -24,7 +24,7 @@ const CallToAction = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://chromewebstore.google.com/detail/nhgeihbbpdnhcfccedpnkionaofdpaib?utm_source=item-share-cb"
-                  className="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-[#0BB489]"
+                  className="inline-block rounded-md border border-transparent bg-accent px-7 py-3 text-base font-medium text-dark transition hover:bg-accent/90 hover:text-dark"
                 >
                   Add SignalizeAI to Chrome
                 </Link>
