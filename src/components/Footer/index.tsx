@@ -356,7 +356,7 @@ const Footer = () => {
               </div>
               <div className="mt-2 w-full px-4 md:mt-0 md:w-auto">
                 <div className="flex justify-center md:justify-end">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-300">
                     &copy; {new Date().getFullYear()} SignalizeAI. All Rights
                     Reserved.
                   </p>
