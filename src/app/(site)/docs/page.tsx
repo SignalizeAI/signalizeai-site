@@ -20,7 +20,7 @@ const DocsPage = () => {
                 Getting Started
               </h2>
               <p className="text-body-color dark:text-body-color-dark text-base">
-                Welcome to SignalizeAI documentation. Here you'll find
+                Welcome to SignalizeAI documentation. Here you&apos;ll find
                 comprehensive guides and documentation to help you start working
                 with SignalizeAI as quickly as possible.
               </p>
@@ -32,7 +32,7 @@ const DocsPage = () => {
                 Need Help?
               </h3>
               <p className="text-body-color dark:text-body-color-dark mb-4 text-base">
-                Can't find what you're looking for? We're here to help.
+                Can&apos;t find what you&apos;re looking for? We&apos;re here to help.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a

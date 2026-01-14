@@ -204,26 +204,32 @@ const MobileNav = ({
                         className={`h-4 w-4 transition-transform ${submenuOpen === index ? "rotate-180" : ""}`}
                       />
                     </button>
-                    <ul
-                      className={`ml-4 flex-col gap-2 ${submenuOpen === index ? "flex" : "hidden"}`}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        submenuOpen === index
+                          ? "max-h-[400px] opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
-                      {menuItem.submenu.map((sub, idx) => (
-                        <li key={idx}>
-                          <Link
-                            href={sub.path || "#"}
-                            target={sub.newTab ? "_blank" : "_self"}
-                            className="flex items-center gap-4 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 hover:bg-gray-50 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
-                          >
-                            {sub.icon && (
-                              <span className="h-5 w-5 fill-current">
-                                {sub.icon}
-                              </span>
-                            )}
-                            {sub.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                      <ul className="ml-4 flex flex-col gap-2">
+                        {menuItem.submenu.map((sub, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={sub.path || "#"}
+                              target={sub.newTab ? "_blank" : "_self"}
+                              className="flex items-center gap-4 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 hover:bg-gray-50 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
+                            >
+                              {sub.icon && (
+                                <span className="h-5 w-5 fill-current">
+                                  {sub.icon}
+                                </span>
+                              )}
+                              {sub.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </>
                 ) : (
                   <Link
