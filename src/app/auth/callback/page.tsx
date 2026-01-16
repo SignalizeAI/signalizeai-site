@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-);
+import { supabase } from "@/utils/supabaseClient";
 
 export default function AuthCallbackPage() {
   useEffect(() => {
@@ -17,8 +12,8 @@ export default function AuthCallbackPage() {
       const access_token = params.get("access_token");
       const refresh_token = params.get("refresh_token");
 
-      if (!access_token) {
-        console.error("No access token found");
+      if (!access_token || !refresh_token) {
+        console.error("Missing auth tokens");
         return;
       }
 
@@ -27,11 +22,11 @@ export default function AuthCallbackPage() {
         refresh_token,
       });
 
-      // If opened from extension, close tab
-      window.close();
-
-      // Fallback redirect (in case close is blocked)
-      window.location.href = "/";
+      try {
+        window.close();
+      } catch {
+        window.location.href = "/";
+      }
     }
 
     handleAuth();
