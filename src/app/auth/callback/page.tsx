@@ -1,7 +1,9 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useEffect } from "react";
-import { supabase } from "@/utils/supabaseClient";
+import { createClient } from "@supabase/supabase-js";
 
 export default function AuthCallbackPage() {
   useEffect(() => {
@@ -17,16 +19,25 @@ export default function AuthCallbackPage() {
         return;
       }
 
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      );
+
       await supabase.auth.setSession({
         access_token,
         refresh_token,
       });
 
-      try {
-        window.close();
-      } catch {
-        window.location.href = "/";
+      // Notify extension
+      const w = window as any;
+      if (w.chrome?.runtime?.sendMessage) {
+        w.chrome.runtime.sendMessage("nhgeihbbpdnhcfccedpnkionaofdpaib", {
+          type: "AUTH_SUCCESS",
+        });
       }
+
+      setTimeout(() => window.close(), 600);
     }
 
     handleAuth();
