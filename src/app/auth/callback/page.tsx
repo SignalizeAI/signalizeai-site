@@ -46,7 +46,6 @@ export default function AuthCallbackPage() {
           await supabase.auth.exchangeCodeForSession(code);
         error = exchangeError;
       } else {
-        // Fallback: Check if session already exists
         const {
           data: { session },
         } = await supabase.auth.getSession();
@@ -132,20 +131,11 @@ export default function AuthCallbackPage() {
             {status === "loading" &&
               "Please wait while we secure your session."}
             {status === "success" &&
-              "You can now close this window and return to the extension."}
+              "This window will close automatically."}
             {status === "error" &&
               "We couldn't verify your credentials. Please try again."}
           </p>
         </div>
-
-        {status === "success" && (
-          <button
-            onClick={() => window.close()}
-            className="mt-4 rounded-lg border border-[#00E5FF]/20 bg-[#1A237E] px-6 py-2 font-medium text-[#00E5FF] shadow-[0_0_15px_-3px_rgba(26,35,126,0.5)] transition-all hover:bg-[#1A237E]/80"
-          >
-            Close Window
-          </button>
-        )}
       </div>
     </div>
   );
