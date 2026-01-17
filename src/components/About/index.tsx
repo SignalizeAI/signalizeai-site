@@ -13,7 +13,7 @@ const About = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="mb-12 max-w-[540px] lg:mb-0">
                 <h2 className="mb-5 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-[40px] sm:leading-[1.2]">
-                  Understand any website in seconds with <span className="text-primary">Signalize</span><span className="text-accent">AI</span>.
+                  Understand any website in seconds with <span className="text-dark dark:text-white">Signalize</span><span className="text-primary dark:text-accent">AI</span>.
                 </h2>
                 <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
                   Our Chrome extension reads only the public content on the page

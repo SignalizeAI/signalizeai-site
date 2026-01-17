@@ -7,7 +7,7 @@ const OfferList = ({ text, available = true }: { text: string; available?: boole
     }`}>
       {available ? (
         <svg
-          className="mt-1 h-4 w-4 text-green-500"
+          className="mt-0.5 h-4 w-4 text-green-500"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -20,7 +20,7 @@ const OfferList = ({ text, available = true }: { text: string; available?: boole
         </svg>
       ) : (
         <svg
-          className="mt-1 h-4 w-4 text-gray-400"
+          className="mt-0.5 h-4 w-4 text-gray-400"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
