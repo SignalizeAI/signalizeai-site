@@ -321,24 +321,22 @@ const Footer = () => {
             </p>
             <div className="flex gap-6">
               <Link
-                href="https://signalizeai.org/privacy"
+                href="/privacy"
                 className="text-xs text-gray-400 transition-colors hover:text-white"
               >
                 Privacy Policy
               </Link>
-              <span className="text-gray-600">•</span>
-              <a
+              <Link
                 href="#"
                 className="text-xs text-gray-400 transition-colors hover:text-white"
               >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* --- Background Shapes (Preserved) --- */}
       <div>
         <span className="absolute top-0 left-0 z-[-1] aspect-[95/82] w-full max-w-[570px] opacity-40 mix-blend-overlay">
           <Image src="/images/footer/shape-1.svg" alt="shape" fill />

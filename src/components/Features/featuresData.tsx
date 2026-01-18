@@ -129,7 +129,7 @@ const featuresData: Feature[] = [
     ),
     title: "Save, filter, and export",
     paragraph:
-      "Optional Google sign-in with Supabase to store analyses, filter by what matters, and export to CSV or Excel when you are ready to act.",
+      "Optional Google sign-in with secure cloud storage to store analyses, filter by what matters, and export to CSV or Excel when you are ready to act.",
     btn: "",
     btnLink: "",
   },

@@ -51,13 +51,13 @@ const Hero = () => {
                     data-wow-delay=".3s"
                   >
                     <span className="rounded-full border border-white/25 px-4 py-2 text-sm font-medium text-white/80">
-                      Manifest V3 Chrome Extension
+                      Real-time Business Intelligence
                     </span>
                     <span className="rounded-full border border-white/25 px-4 py-2 text-sm font-medium text-white/80">
-                      Supabase Auth + Storage
+                      Instant Competitor Analysis
                     </span>
                     <span className="rounded-full border border-white/25 px-4 py-2 text-sm font-medium text-white/80">
-                      AI on public website text only
+                      Sales Readiness Score
                     </span>
                   </div>
                 </div>

@@ -3,7 +3,7 @@ import SingleFaq from "./SingleFaq";
 
 const Faq = () => {
   return (
-    <section className="relative z-20 overflow-hidden bg-white pb-8 pt-20 dark:bg-dark lg:pb-[50px] lg:pt-[120px]">
+    <section className="dark:bg-dark relative z-20 overflow-hidden bg-white pt-20 pb-8 lg:pt-30 lg:pb-12.5">
       <div className="container">
         <SectionTitle
           subtitle="FAQ"
@@ -14,7 +14,7 @@ const Faq = () => {
         />
 
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
-          <div className="w-full px-4 lg:w-1/2">
+            <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
               question="What does SignalizeAI analyze?"
               answer="Only the publicly visible text on the page you are viewing. We do not collect or send personal data or browsing history to the AI."
@@ -24,10 +24,14 @@ const Faq = () => {
               answer="Yes. Sign in with Google if you want to save, filter, or export your analyses. Browsing insights won't work without an account."
             />
             <SingleFaq
-              question="How are API keys secured?"
-              answer="Keys live on our Cloudflare Workers backend, never in the extension. Requests are rate-limited and protected before any AI call is made."
+              question="Is SignalizeAI free to use?"
+              answer="Yes. SignalizeAI is free with a generous monthly limit. Premium plans offer higher limits and advanced features for power users."
             />
-          </div>
+            <SingleFaq
+              question="Do you track users or sell data?"
+              answer="No. SignalizeAI does not track you, run ads, or sell data. We respect privacy and only process public website content."
+            />
+            </div>
 
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
@@ -42,12 +46,16 @@ const Faq = () => {
               question="Do you track users or sell data?"
               answer="No. SignalizeAI does not track you, run ads, or sell data. We respect privacy and only process public website content."
             />
+            <SingleFaq
+              question="Is SignalizeAI open source?"
+              answer="Yes. SignalizeAI is open source and committed to transparency and security in how we handle your data."
+            />
           </div>
         </div>
       </div>
 
       <div>
-        <span className="absolute left-4 top-4 -z-[1]">
+        <span className="absolute top-4 left-4 -z-[1]">
           <svg
             width="48"
             height="134"
@@ -337,7 +345,7 @@ const Faq = () => {
             />
           </svg>
         </span>
-        <span className="absolute bottom-4 right-4 -z-[1]">
+        <span className="absolute right-4 bottom-4 -z-[1]">
           <svg
             width="48"
             height="134"

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SignalizeAI",
@@ -8,144 +7,359 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className={styles.container}>
-      <h1>Privacy Policy for SignalizeAI</h1>
-      <p>
-        <strong>Last updated:</strong> 31 December 2025
-      </p>
+    <main className="bg-dark selection:bg-accent selection:text-dark min-h-screen font-sans text-gray-300">
+      <div className="bg-primary pointer-events-none fixed top-0 left-1/2 h-75 w-150 -translate-x-1/2 rounded-full opacity-20 blur-[120px]" />
 
-      <p>
-        SignalizeAI (“we”, “our”, or “the extension”) is a Chrome extension
-        designed to help users analyze publicly available business websites and
-        generate sales-related insights.
-      </p>
+      <div className="relative z-10 mx-auto max-w-4xl px-6 py-16 sm:py-24">
+        <header className="mb-16 text-center">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Privacy Policy
+          </h1>
+          <div className="bg-primary/30 border-primary text-accent inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium">
+            <span className="relative flex h-2 w-2">
+              <span className="bg-accent absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
+              <span className="bg-accent relative inline-flex h-2 w-2 rounded-full"></span>
+            </span>
+            Last updated: December 31, 2025
+          </div>
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed">
+            SignalizeAI (“we”, “our”, or “the extension”) is a Chrome extension
+            designed to help users analyze publicly available business websites
+            and generate sales-related insights.
+          </p>
+        </header>
 
-      <h2>1. Information We Collect</h2>
+        <div className="via-primary mb-12 h-px w-full bg-linear-to-r from-transparent to-transparent" />
 
-      <h3>1.1 Website Content</h3>
-      <p>
-        SignalizeAI processes publicly available content from the active browser
-        tab, including page titles, meta descriptions, headings, and visible
-        text.
-      </p>
-      <p>This data is used only to generate on-screen analysis for the user.</p>
+        <div className="space-y-12">
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">1.</span> Information We Collect
+            </h2>
 
-      <p>We do not collect:</p>
-      <ul>
-        <li>Private or password-protected pages</li>
-        <li>User form inputs</li>
-        <li>Cookies or session data</li>
-      </ul>
+            <div className="border-primary/50 space-y-6 border-l pl-0 sm:pl-10">
+              <div>
+                <h3 className="mb-2 text-lg font-medium text-white">
+                  1.1 Website Content
+                </h3>
+                <p className="mb-3 leading-7">
+                  SignalizeAI processes publicly available content from the
+                  active browser tab, including page titles, meta descriptions,
+                  headings, and visible text. This data is used only to generate
+                  on-screen analysis for the user.
+                </p>
+                <div>
+                  <span className="mb-2 block text-sm font-semibold text-white">
+                    We do NOT collect:
+                  </span>
+                  <ul className="grid gap-3 text-sm">
+                    {[
+                      "Private/Password-protected pages",
+                      "User form inputs",
+                      "Cookies or session data",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <svg
+                          className="mt-0.5 h-4 w-4 text-red-400 shrink-0" 
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
 
-      <h3>1.2 User Account Information</h3>
-      <p>
-        If a user chooses to sign in using Google, we receive their email address
-        and name via secure authentication handled by Supabase.
-      </p>
+              <div>
+                <h3 className="mb-2 text-lg font-medium text-white">
+                  1.2 User Account Information
+                </h3>
+                <p className="leading-7">
+                  If a user chooses to sign in using Google, we receive their
+                  email address and name via secure authentication handled by
+                  Supabase.
+                </p>
+              </div>
 
-      <h3>1.3 Saved Analyses (Optional)</h3>
-      <p>
-        If enabled by the user, saved analyses may include the domain name,
-        generated insights, and a timestamp. This data is private and accessible
-        only to the authenticated user.
-      </p>
+              <div>
+                <h3 className="mb-2 text-lg font-medium text-white">
+                  1.3 Saved Analyses (Optional)
+                </h3>
+                <p className="leading-7">
+                  If enabled by the user, saved analyses may include the domain
+                  name, generated insights, and a timestamp. This data is
+                  private and accessible only to the authenticated user.
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <h2>2. How We Use Data</h2>
-      <p>Collected data is used strictly to:</p>
-      <ul>
-        <li>Generate AI-based business insights</li>
-        <li>Display results within the extension</li>
-        <li>Save user-requested analyses</li>
-        <li>Improving extension functionality and user experience</li>
-      </ul>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">2.</span> How We Use Data
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-4">Collected data is used strictly to:</p>
+              <ul className="mb-6 space-y-3">
+                {[
+                  "Generate AI-based business insights",
+                  "Display results within the extension",
+                  "Save user-requested analyses",
+                  "Improving extension functionality and user experience",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-gray-400 italic">
+                We do not sell, share, or use data for advertising or tracking.
+              </p>
+            </div>
+          </section>
 
-      <p>We do not sell, share, or use data for advertising or tracking.</p>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">3.</span> AI Processing
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-4">
+                SignalizeAI uses a third-party AI API to generate insights.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Only extracted website text is sent for analysis",
+                  "No personal user data is sent to the AI service",
+                  "API requests are rate-limited and secured server-side",
+                  "AI responses are generated on-demand and are not used to train models",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-      <h2>3. AI Processing</h2>
-      <p>SignalizeAI uses a third-party AI API to generate insights.</p>
-      <ul>
-        <li>Only extracted website text is sent for analysis</li>
-        <li>No personal user data is sent to the AI service</li>
-        <li>API requests are rate-limited and secured server-side</li>
-        <li>
-          AI responses are generated on-demand and are not used to train models
-          or retained for unrelated purposes
-        </li>
-      </ul>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">4.</span> Data Storage & Security
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <ul className="space-y-3">
+                {[
+                  "Authentication and saved data are stored using Supabase.",
+                  "API keys are never exposed in the extension (client-side).",
+                  "All backend requests are protected via origin checks and rate limiting.",
+                  "Industry-standard security practices are followed for data encryption.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-      <h2>4. Data Storage & Security</h2>
-      <ul>
-        <li>Authentication and saved data are stored using <b>Supabase</b></li>
-        <li>API keys are never exposed in the extension</li>
-        <li>
-          All backend requests are protected via origin checks and rate limiting
-        </li>
-        <li>Industry-standard security practices are followed</li>
-      </ul>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">5.</span> Permissions Explanation
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-4">
+                SignalizeAI requests the following permissions only for core
+                functionality:
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { title: "Tabs", desc: "Read active tab content" },
+                  { title: "Side Panel", desc: "Display analysis UI" },
+                  { title: "Storage", desc: "Save user preferences" },
+                ].map((perm) => (
+                  <li key={perm.title} className="flex items-start gap-3">
+                    <svg
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>
+                      <strong className="text-accent">{perm.title}:</strong>{" "}
+                      {perm.desc}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-      <h2>5. Permissions Explanation</h2>
-      <p>SignalizeAI requests the following permissions:</p>
-      <ul>
-        <li>
-          <strong>Tabs</strong>: Read active tab content
-        </li>
-        <li>
-          <strong>Side Panel</strong>: Display analysis
-        </li>
-        <li>
-          <strong>Storage</strong>: Save preferences
-        </li>
-        <li>
-          <strong>Identity</strong>: Support Google sign-in
-        </li>
-      </ul>
-      <p>
-        <b>These permissions are used only for core functionality.</b>
-      </p>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">6.</span> Data Retention & Deletion
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-4">
+                We adhere to strict data retention policies:
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Users may delete specific saved analyses at any time via the extension interface.",
+                  "Users may sign out to remove extension access to their account.",
+                  "Upon full account deletion request, all user data is permanently removed from our systems.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-      <h2>6. Data Retention & Deletion</h2>
-      <ul>
-        <li>Users may delete saved analyses at any time</li>
-        <li>Users may sign out to remove access</li>
-        <li>Upon account deletion, all user data is removed from our systems</li>
-      </ul>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">7.</span> Third-Party Services
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-4">
+                SignalizeAI integrates with the following services:
+              </p>
+              <ul className="mb-4 space-y-2">
+                <li>
+                  <strong className="text-white">Google OAuth:</strong> For
+                  secure authentication.
+                </li>
+                <li>
+                  <strong className="text-white">Supabase:</strong> For database
+                  storage and authentication management.
+                </li>
+                <li>
+                  <strong className="text-white">AI API Provider:</strong> For
+                  processing text and generating insights.
+                </li>
+              </ul>
+              <p className="text-sm text-gray-400 italic">
+                Each service operates under its own privacy policy, which
+                governs their respective data handling practices.
+              </p>
+            </div>
+          </section>
 
-      <h2>7. Third-Party Services</h2>
-      <p>SignalizeAI integrates with:</p>
-      <ul>
-        <li>Google OAuth (authentication)</li>
-        <li>Supabase (authentication & storage)</li>
-        <li>AI API provider (text analysis)</li>
-      </ul>
-      <p>
-        Each service operates under its own privacy policy, which governs their
-        respective data handling practices.
-      </p>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">8.</span> Children&apos;s Privacy
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-8">
+                SignalizeAI is not intended for users under the age of 13. We do
+                not knowingly collect data from children.
+              </p>
+            </div>
+          </section>
 
-      <h2>8. Children’s Privacy</h2>
-      <p>
-        SignalizeAI is not intended for users under the age of 13. We do not
-        knowingly collect data from children.
-      </p>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">9.</span> Changes to This Policy
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p>
+                This Privacy Policy may be updated from time to time. Any changes
+                will be reflected on this page with an updated date.
+              </p>
+            </div>
+          </section>
 
-      <h2>9. Changes to This Policy</h2>
-      <p>
-        This Privacy Policy may be updated from time to time. Any changes will be
-        reflected on this page with an updated date.
-      </p>
+          <section>
+            <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
+              <span className="text-accent">10.</span> Contact Us
+            </h2>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-6">
+                If you have any questions or concerns regarding privacy, please
+                reach out to us directly at{" "}
+                <a
+                  href="mailto:privacy@signalizeai.org"
+                  className="text-accent hover:underline"
+                >
+                  privacy@signalizeai.org
+                </a>
+                .
+              </p>
+            </div>
+          </section>
+        </div>
 
-      <h2>10. Contact</h2>
-      <p>
-        If you have any questions or concerns regarding privacy, you may contact
-        us at:
-      </p>
-      <p>
-        <a href="mailto:privacy@signalizeai.org">
-          <strong>privacy@signalizeai.org</strong>
-        </a>
-      </p>
-
-      <footer>© 2026 SignalizeAI</footer>
+        <footer className="border-primary/30 mt-20 border-t pt-8 text-center text-sm text-gray-500">
+          <p>© 2026 SignalizeAI. All rights reserved.</p>
+        </footer>
+      </div>
     </main>
   );
 }

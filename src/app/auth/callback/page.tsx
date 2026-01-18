@@ -46,7 +46,6 @@ export default function AuthCallbackPage() {
           await supabase.auth.exchangeCodeForSession(code);
         error = exchangeError;
       } else {
-        // Fallback: Check if session already exists
         const {
           data: { session },
         } = await supabase.auth.getSession();
@@ -80,26 +79,31 @@ export default function AuthCallbackPage() {
         "*"
       );
 
-      setStatus("success");
-      setTimeout(() => window.close(), 600);
+      setTimeout(() => {
+        if (window.opener) {
+          window.close();
+        } else {
+          window.location.href = "/pricing";
+        }
+      }, 600);
     }
 
     handleAuth();
   }, []);
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#121212] font-sans text-white">
+    <div className="bg-dark relative flex min-h-screen flex-col items-center justify-center overflow-hidden font-sans text-white">
       <div className="relative z-10 flex w-full max-w-md flex-col items-center space-y-6 p-8 text-center">
         <div className="relative flex items-center justify-center">
           {status === "loading" && (
-            <div className="h-16 w-16 animate-spin rounded-full border-4 border-[#1A237E] border-t-[#00E5FF]" />
+            <div className="border-primary border-t-accent h-16 w-16 animate-spin rounded-full border-4" />
           )}
 
           {status === "success" && (
-            <div className="animate-in zoom-in flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#00E5FF] bg-[#1A237E]/30 duration-300">
+            <div className="animate-in zoom-in border-accent bg-primary/30 flex h-16 w-16 items-center justify-center rounded-full border-2 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-[#00E5FF]"
+                className="text-accent h-8 w-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -138,7 +142,7 @@ export default function AuthCallbackPage() {
           <h2 className="text-2xl font-bold tracking-wide">
             {status === "loading" && "Authenticating..."}
             {status === "success" && (
-              <span className="text-[#00E5FF]">Signed In Successfully</span>
+              <span className="text-accent">Signed In Successfully</span>
             )}
             {status === "error" && "Authentication Failed"}
           </h2>
@@ -146,21 +150,11 @@ export default function AuthCallbackPage() {
           <p className="text-sm text-gray-400">
             {status === "loading" &&
               "Please wait while we secure your session."}
-            {status === "success" &&
-              "You can now close this window and return to the extension."}
+            {status === "success" && "This window will close automatically."}
             {status === "error" &&
               "We couldn't verify your credentials. Please try again."}
           </p>
         </div>
-
-        {status === "success" && (
-          <button
-            onClick={() => window.close()}
-            className="mt-4 rounded-lg border border-[#00E5FF]/20 bg-[#1A237E] px-6 py-2 font-medium text-[#00E5FF] shadow-[0_0_15px_-3px_rgba(26,35,126,0.5)] transition-all hover:bg-[#1A237E]/80"
-          >
-            Close Window
-          </button>
-        )}
       </div>
     </div>
   );
