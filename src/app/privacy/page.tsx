@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <main className="bg-dark selection:bg-accent selection:text-dark min-h-screen font-sans text-gray-300">
-      <div className="bg-primary pointer-events-none fixed top-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" />
+      <div className="bg-primary pointer-events-none fixed top-0 left-1/2 h-75 w-150 -translate-x-1/2 rounded-full opacity-20 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 py-16 sm:py-24">
         <header className="mb-16 text-center">
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
           </p>
         </header>
 
-        <div className="via-primary mb-12 h-px w-full bg-gradient-to-r from-transparent to-transparent" />
+        <div className="via-primary mb-12 h-px w-full bg-linear-to-r from-transparent to-transparent" />
 
         <div className="space-y-12">
           <section>
@@ -58,9 +58,9 @@ export default function PrivacyPage() {
                       "User form inputs",
                       "Cookies or session data",
                     ].map((item) => (
-                      <li key={item} className="flex items-center gap-2">
+                      <li key={item} className="flex items-start gap-2">
                         <svg
-                          className="h-4 w-4 text-red-400"
+                          className="mt-0.5 h-4 w-4 text-red-400 shrink-0" 
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
                             d="M6 18L18 6M6 6l12 12"
                           />
                         </svg>
-                        {item}
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <svg
-                      className="text-accent h-5 w-5 flex-shrink-0"
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <svg
-                      className="text-accent h-5 w-5 flex-shrink-0"
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -190,7 +190,7 @@ export default function PrivacyPage() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <svg
-                      className="text-accent h-5 w-5 flex-shrink-0"
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -226,7 +226,7 @@ export default function PrivacyPage() {
                 ].map((perm) => (
                   <li key={perm.title} className="flex items-start gap-3">
                     <svg
-                      className="text-accent h-5 w-5 flex-shrink-0"
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -248,12 +248,14 @@ export default function PrivacyPage() {
             </div>
           </section>
 
-          {/* Section 6 */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
               <span className="text-accent">6.</span> Data Retention & Deletion
             </h2>
             <div className="pl-0 sm:pl-10">
+              <p className="mb-4">
+                We adhere to strict data retention policies:
+              </p>
               <ul className="space-y-3">
                 {[
                   "Users may delete specific saved analyses at any time via the extension interface.",
@@ -262,7 +264,7 @@ export default function PrivacyPage() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <svg
-                      className="text-accent h-5 w-5 flex-shrink-0"
+                      className="text-accent mt-0.5 h-5 w-5 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -281,7 +283,6 @@ export default function PrivacyPage() {
             </div>
           </section>
 
-          {/* Section 7 */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
               <span className="text-accent">7.</span> Third-Party Services
@@ -311,41 +312,48 @@ export default function PrivacyPage() {
             </div>
           </section>
 
-          {/* Sections 8 & 9 */}
-          <section className="border-primary/30 border-t pt-8">
+          <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
-              <span className="text-accent">8.</span> Childrens Privacy
+              <span className="text-accent">8.</span> Children&apos;s Privacy
             </h2>
-            <p className="mb-8">
-              SignalizeAI is not intended for users under the age of 13. We do
-              not knowingly collect data from children.
-            </p>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-8">
+                SignalizeAI is not intended for users under the age of 13. We do
+                not knowingly collect data from children.
+              </p>
+            </div>
+          </section>
 
+          <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
               <span className="text-accent">9.</span> Changes to This Policy
             </h2>
-            <p>
-              This Privacy Policy may be updated from time to time. Any changes
-              will be reflected on this page with an updated date.
-            </p>
+            <div className="pl-0 sm:pl-10">
+              <p>
+                This Privacy Policy may be updated from time to time. Any changes
+                will be reflected on this page with an updated date.
+              </p>
+            </div>
           </section>
 
-            <section>
+          <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-white">
               <span className="text-accent">10.</span> Contact Us
             </h2>
-            <p className="mb-6">
-              If you have any questions or concerns regarding privacy, please
-              reach out to us directly at{" "}
-              <a
-              href="mailto:privacy@signalizeai.org"
-              className="text-accent hover:underline"
-              >
-              privacy@signalizeai.org
-              </a>
-              .
-            </p>
-            </section>
+            <div className="pl-0 sm:pl-10">
+              <p className="mb-6">
+                If you have any questions or concerns regarding privacy, please
+                reach out to us directly at{" "}
+                <a
+                  href="mailto:privacy@signalizeai.org"
+                  className="text-accent hover:underline"
+                >
+                  privacy@signalizeai.org
+                </a>
+                .
+              </p>
+            </div>
+          </section>
         </div>
 
         <footer className="border-primary/30 mt-20 border-t pt-8 text-center text-sm text-gray-500">
