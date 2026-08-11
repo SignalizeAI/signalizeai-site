@@ -15,17 +15,34 @@ export type SavedProspectsPage = {
   totalCount: number;
 };
 
+
+/**
+ * Escape a value for PostgREST filter grammar used inside `or=(...)`.
+ * Strips/neutralizes characters that change expression structure.
+ */
+export function escapePostgrestValue(value: string): string {
+  return value
+    .replace(/\\/g, "")
+    .replace(/"/g, "")
+    .replace(/[(),.*]/g, " ")
+    .replace(/,/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function createBaseUrl() {
   return new URL("/rest/v1/saved_analyses", supabaseUrl);
 }
 
 function applyFilters(url: URL, query: SavedProspectsQuery) {
   if (query.search.trim()) {
-    const term = query.search.trim().replace(/,/g, " ");
-    url.searchParams.set(
-      "or",
-      `(title.ilike.*${term}*,domain.ilike.*${term}*,url.ilike.*${term}*)`,
-    );
+    const term = escapePostgrestValue(query.search);
+    if (term) {
+      url.searchParams.set(
+        "or",
+        `(title.ilike.*${term}*,domain.ilike.*${term}*,url.ilike.*${term}*)`,
+      );
+    }
   }
 
   if (query.status !== "all") {
